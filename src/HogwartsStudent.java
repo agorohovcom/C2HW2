@@ -1,18 +1,23 @@
-public class Hogwarts {
+public class HogwartsStudent {
     private String studentName;
+    // мощность колдовства, расстояние трансгрессии
     private int magicPower;
     private int transgressionDistance;
 
-    public Hogwarts(String studentName, int magicPower, int transgressionDistance) {
+    public HogwartsStudent(String studentName, int magicPower, int transgressionDistance) {
         this.studentName = studentName;
         this.magicPower = magicPower;
         this.transgressionDistance = transgressionDistance;
     }
 
-    public Hogwarts(String studentName) {
+    public HogwartsStudent(String studentName) {
         this.studentName = studentName;
-        magicPower = (int) (Math.random() * 100);
-        transgressionDistance = (int) (Math.random() * 100);
+        magicPower = getRandomSkillLevel();
+        transgressionDistance = getRandomSkillLevel();
+    }
+
+    protected int getRandomSkillLevel() {
+        return (int) (Math.random() * 100);
     }
 
     public String getStudentName() {
@@ -37,5 +42,14 @@ public class Hogwarts {
 
     public void setTransgressionDistance(int transgressionDistance) {
         this.transgressionDistance = transgressionDistance;
+    }
+
+    @Override
+    public String toString() {
+        return "HogwartsStudent{" +
+                "studentName='" + studentName + '\'' +
+                ", magicPower=" + magicPower +
+                ", transgressionDistance=" + transgressionDistance +
+                '}';
     }
 }
