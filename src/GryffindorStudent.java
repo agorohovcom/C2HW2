@@ -1,4 +1,4 @@
-public class GryffindorStudent extends HogwartsStudent {
+public class GryffindorStudent extends Hogwarts {
     // благородство, честь, храбрость
     private int nobleness;
     private int honor;
@@ -46,11 +46,26 @@ public class GryffindorStudent extends HogwartsStudent {
     public String toString() {
         return "GryffindorStudent{" +
                 "studentName='" + getStudentName() + '\'' +
-                ", magicPower=" + getMagicPower() +
-                ", transgressionDistance=" + getTransgressionDistance() +
+                ", magicPower=" + getStudentMagicPower() +
+                ", transgressionDistance=" + getStudentTransgressionDistance() +
                 ", nobleness=" + nobleness +
                 ", honor=" + honor +
                 ", bravery=" + bravery +
                 '}';
+    }
+
+    public static void compareGryffindorStudents(GryffindorStudent student1, GryffindorStudent student2) {
+        int student1Power = student1.nobleness + student1.honor + student1.bravery;
+        int student2Power = student2.nobleness + student2.honor + student2.bravery;
+        if (student1Power > student2Power) {
+            System.out.printf("%s лучший Грифиндорец, чем %s\n",
+                    student1.getStudentName(), student2.getStudentName());
+        } else if (student1Power < student2Power) {
+            System.out.printf("%s лучший Грифиндорец, чем %s\n",
+                    student2.getStudentName(), student1.getStudentName());
+        } else {
+            System.out.printf("%s и %s - равносильные Грифиндорцы\n",
+                    student1.getStudentName(), student2.getStudentName());
+        }
     }
 }

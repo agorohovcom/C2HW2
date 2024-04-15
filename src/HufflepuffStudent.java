@@ -1,4 +1,4 @@
-public class HufflepuffStudent extends HogwartsStudent {
+public class HufflepuffStudent extends Hogwarts {
     // трудолюбие, верность, честность
     private int hardworking;
     private int loyalty;
@@ -46,11 +46,26 @@ public class HufflepuffStudent extends HogwartsStudent {
     public String toString() {
         return "HufflepuffStudent{" +
                 "studentName='" + getStudentName() + '\'' +
-                ", magicPower=" + getMagicPower() +
-                ", transgressionDistance=" + getTransgressionDistance() +
+                ", magicPower=" + getStudentMagicPower() +
+                ", transgressionDistance=" + getStudentTransgressionDistance() +
                 ", hardworking=" + hardworking +
                 ", loyalty=" + loyalty +
                 ", honesty=" + honesty +
                 '}';
+    }
+
+    public static void compareHufflepuffStudents(HufflepuffStudent student1, HufflepuffStudent student2) {
+        int student1Power = student1.hardworking + student1.loyalty + student1.honesty;
+        int student2Power = student2.hardworking + student2.loyalty + student2.honesty;
+        if (student1Power > student2Power) {
+            System.out.printf("%s лучший Пуффендуец, чем %s\n",
+                    student1.getStudentName(), student2.getStudentName());
+        } else if (student1Power < student2Power) {
+            System.out.printf("%s лучший Пуффендуец, чем %s\n",
+                    student2.getStudentName(), student1.getStudentName());
+        } else {
+            System.out.printf("%s и %s - равносильные Пуффендуйцы\n",
+                    student1.getStudentName(), student2.getStudentName());
+        }
     }
 }

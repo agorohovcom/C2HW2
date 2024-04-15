@@ -1,4 +1,4 @@
-public class RavenclawStudent extends HogwartsStudent {
+public class RavenclawStudent extends Hogwarts {
     // ум, мудрость, остроумие, творчество
     private int intelligence;
     private int wisdom;
@@ -57,12 +57,27 @@ public class RavenclawStudent extends HogwartsStudent {
     public String toString() {
         return "RavenclawStudent{" +
                 "studentName='" + getStudentName() + '\'' +
-                ", magicPower=" + getMagicPower() +
-                ", transgressionDistance=" + getTransgressionDistance() +
+                ", magicPower=" + getStudentMagicPower() +
+                ", transgressionDistance=" + getStudentTransgressionDistance() +
                 ", intelligence=" + intelligence +
                 ", wisdom=" + wisdom +
                 ", wittiness=" + wittiness +
                 ", creative=" + creative +
                 '}';
+    }
+
+    public static void compareRavenclawStudents(RavenclawStudent student1, RavenclawStudent student2) {
+        int student1Power = student1.intelligence + student1.wisdom + student1.wittiness + student1.creative;
+        int student2Power = student2.intelligence + student2.wisdom + student2.wittiness + student1.creative;
+        if (student1Power > student2Power) {
+            System.out.printf("%s лучший Когтевранец, чем %s\n",
+                    student1.getStudentName(), student2.getStudentName());
+        } else if (student1Power < student2Power) {
+            System.out.printf("%s лучший Когтевранец, чем %s\n",
+                    student2.getStudentName(), student1.getStudentName());
+        } else {
+            System.out.printf("%s и %s - равносильные Когтевранцы\n",
+                    student1.getStudentName(), student2.getStudentName());
+        }
     }
 }

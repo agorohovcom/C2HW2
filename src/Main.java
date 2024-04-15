@@ -3,41 +3,46 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        GryffindorStudent harryPotter = new GryffindorStudent("Harry Potter");
-        GryffindorStudent hermionaGreyndger = new GryffindorStudent("Hermiona Greindger");
-        GryffindorStudent ronUizly = new GryffindorStudent("Ron Uizly", 33, 55, 33, 5, 22);
+        GryffindorStudent harryPotter = new GryffindorStudent("Гарри Поттер");
+        GryffindorStudent hermionaGreyndger = new GryffindorStudent("Гермиона Грейнджер");
+        GryffindorStudent ronUizly = new GryffindorStudent("Рон Уизли", 33, 55, 33, 5, 22);
         students.add(harryPotter);
         students.add(hermionaGreyndger);
         students.add(ronUizly);
 
-        SlytherinStudent drakoMalfoy = new SlytherinStudent("Drako Malfoy");
-        SlytherinStudent grahamMontegu = new SlytherinStudent("Graham Montegu");
-        SlytherinStudent gregoryGoyl = new SlytherinStudent("Gregory Goyl");
+        SlytherinStudent drakoMalfoy = new SlytherinStudent("Драко Малфой", 1, 2, 3, 4, 5, 6, 7);
+        SlytherinStudent grahamMontegu = new SlytherinStudent("Грэхэм Монтегю", 1, 2, 3, 4, 5, 6, 7);
+        SlytherinStudent gregoryGoyl = new SlytherinStudent("Грегори Гойл");
         students.add(drakoMalfoy);
         students.add(grahamMontegu);
         students.add(gregoryGoyl);
 
-        HufflepuffStudent zaharySmit = new HufflepuffStudent("Zahary Smith");
-        HufflepuffStudent sedrickDiggory = new HufflepuffStudent("Sedrick Diggory");
-        HufflepuffStudent justinFinchFlatchly = new HufflepuffStudent("Justin Finch-Flatchly");
+        HufflepuffStudent zaharySmit = new HufflepuffStudent("Захария Смит");
+        HufflepuffStudent sedrickDiggory = new HufflepuffStudent("Седрик Диггори");
+        HufflepuffStudent justinFinchFlatchly = new HufflepuffStudent("Джастин Финч-Флетчли");
         students.add(zaharySmit);
         students.add(sedrickDiggory);
         students.add(justinFinchFlatchly);
 
-        RavenclawStudent chzhouChang = new RavenclawStudent("Chzhou Chang");
-        RavenclawStudent padmaPatil = new RavenclawStudent("Padma Patil");
-        RavenclawStudent markusBelby = new RavenclawStudent("Markus Belby");
+        RavenclawStudent chzhouChang = new RavenclawStudent("Чжоу Чанг");
+        RavenclawStudent padmaPatil = new RavenclawStudent("Падма Патил");
+        RavenclawStudent markusBelby = new RavenclawStudent("Маркус Белби");
         students.add(chzhouChang);
         students.add(padmaPatil);
         students.add(markusBelby);
 
         printStudents();
+
+        GryffindorStudent.compareGryffindorStudents(harryPotter, ronUizly);
+        HufflepuffStudent.compareHufflepuffStudents(zaharySmit, sedrickDiggory);
+        RavenclawStudent.compareRavenclawStudents(chzhouChang, padmaPatil);
+        SlytherinStudent.compareSlytherinStudents(drakoMalfoy, grahamMontegu);
     }
 
-    private static final List<HogwartsStudent> students = new ArrayList<>();
+    private static final List<Hogwarts> students = new ArrayList<>();
 
     private static void printStudents() {
-        for (HogwartsStudent student : students) {
+        for (Hogwarts student : students) {
             System.out.println(student);
         }
     }

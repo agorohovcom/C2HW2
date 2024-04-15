@@ -1,4 +1,4 @@
-public class SlytherinStudent extends HogwartsStudent {
+public class SlytherinStudent extends Hogwarts {
     // хитрость, решительность, амбициозность, находчивость, жажда власти
     private int cunning;
     private int determination;
@@ -68,13 +68,30 @@ public class SlytherinStudent extends HogwartsStudent {
     public String toString() {
         return "SlytherinStudent{" +
                 "studentName='" + getStudentName() + '\'' +
-                ", magicPower=" + getMagicPower() +
-                ", transgressionDistance=" + getTransgressionDistance() +
+                ", magicPower=" + getStudentMagicPower() +
+                ", transgressionDistance=" + getStudentTransgressionDistance() +
                 ", cunning=" + cunning +
                 ", determination=" + determination +
                 ", ambition=" + ambition +
                 ", resourcefulness=" + resourcefulness +
                 ", lustForPower=" + lustForPower +
                 '}';
+    }
+
+    public static void compareSlytherinStudents(SlytherinStudent student1, SlytherinStudent student2) {
+        int student1Power = student1.cunning + student1.determination +
+                student1.ambition + student1.resourcefulness + student1.lustForPower;
+        int student2Power = student2.cunning + student2.determination +
+                student2.ambition + student1.resourcefulness + student1.lustForPower;
+        if (student1Power > student2Power) {
+            System.out.printf("%s лучший Слизеринец, чем %s\n",
+                    student1.getStudentName(), student2.getStudentName());
+        } else if (student1Power < student2Power) {
+            System.out.printf("%s лучший Слизеринец, чем %s\n",
+                    student2.getStudentName(), student1.getStudentName());
+        } else {
+            System.out.printf("%s и %s - равносильные Слизеринцы\n",
+                    student1.getStudentName(), student2.getStudentName());
+        }
     }
 }
