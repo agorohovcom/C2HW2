@@ -44,13 +44,13 @@ public class GryffindorStudent extends Hogwarts {
 
     @Override
     public String toString() {
-        return "GryffindorStudent{" +
-                "studentName='" + getStudentName() + '\'' +
-                ", magicPower=" + getStudentMagicPower() +
-                ", transgressionDistance=" + getStudentTransgressionDistance() +
-                ", nobleness=" + nobleness +
-                ", honor=" + honor +
-                ", bravery=" + bravery +
+        return "Грифиндорец {" +
+                "имя = '" + getStudentName() + '\'' +
+                ", мощность колдовства = " + getStudentMagicPower() +
+                ", расстояние трансгрессии = " + getStudentTransgressionDistance() +
+                ", благородство = " + nobleness +
+                ", честь = " + honor +
+                ", храбрость = " + bravery +
                 '}';
     }
 

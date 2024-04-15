@@ -55,14 +55,14 @@ public class RavenclawStudent extends Hogwarts {
 
     @Override
     public String toString() {
-        return "RavenclawStudent{" +
-                "studentName='" + getStudentName() + '\'' +
-                ", magicPower=" + getStudentMagicPower() +
-                ", transgressionDistance=" + getStudentTransgressionDistance() +
-                ", intelligence=" + intelligence +
-                ", wisdom=" + wisdom +
-                ", wittiness=" + wittiness +
-                ", creative=" + creative +
+        return "Когтевранец {" +
+                "имя = '" + getStudentName() + '\'' +
+                ", мощность колдовства = " + getStudentMagicPower() +
+                ", расстояние трансгрессии = " + getStudentTransgressionDistance() +
+                ", ум = " + intelligence +
+                ", мудрость = " + wisdom +
+                ", остроумие = " + wittiness +
+                ", творчество = " + creative +
                 '}';
     }
 
