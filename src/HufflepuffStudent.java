@@ -4,7 +4,8 @@ public class HufflepuffStudent extends Hogwarts {
     private int loyalty;
     private int honesty;
 
-    public HufflepuffStudent(String studentName, int magicPower, int transgressionDistance, int hardworking, int loyalty, int honesty) {
+    public HufflepuffStudent(String studentName, int magicPower, int transgressionDistance,
+                             int hardworking, int loyalty, int honesty) {
         super(studentName, magicPower, transgressionDistance);
         this.hardworking = hardworking;
         this.loyalty = loyalty;

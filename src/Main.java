@@ -37,6 +37,7 @@ public class Main {
         HufflepuffStudent.compareHufflepuffStudents(zaharySmit, sedrickDiggory);
         RavenclawStudent.compareRavenclawStudents(chzhouChang, padmaPatil);
         SlytherinStudent.compareSlytherinStudents(drakoMalfoy, grahamMontegu);
+        Hogwarts.compareHogwartsStudentsByStockParams(harryPotter, hermionaGreyndger);
     }
 
     private static final List<Hogwarts> students = new ArrayList<>();

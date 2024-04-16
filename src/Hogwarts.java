@@ -46,10 +46,25 @@ public class Hogwarts {
 
     @Override
     public String toString() {
-        return "HogwartsStudent{" +
-                "studentName='" + studentName + '\'' +
-                ", magicPower=" + studentMagicPower +
-                ", transgressionDistance=" + studentTransgressionDistance +
+        return "Хогвардсчанин {" +
+                "имя = '" + studentName + '\'' +
+                ", мощность колдовства = " + studentMagicPower +
+                ", расстояние трансгрессии = " + studentTransgressionDistance +
                 '}';
+    }
+
+    public static void compareHogwartsStudentsByStockParams(Hogwarts student1, Hogwarts student2) {
+        int student1Power = student1.studentMagicPower + student1.studentTransgressionDistance;
+        int student2Power = student2.studentMagicPower + student2.studentTransgressionDistance;
+        if (student1Power > student2Power) {
+            System.out.printf("%s обладает большей мощностью магии, чем %s\n",
+                    student1.getStudentName(), student2.getStudentName());
+        } else if (student1Power < student2Power) {
+            System.out.printf("%s обладает большей мощностью магии, чем %s\n",
+                    student2.getStudentName(), student1.getStudentName());
+        } else {
+            System.out.printf("%s и %s обладают равносильной мощностью магии\n",
+                    student1.getStudentName(), student2.getStudentName());
+        }
     }
 }
